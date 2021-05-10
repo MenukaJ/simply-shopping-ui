@@ -38,13 +38,15 @@ class App extends Component {
     AuthService.logout();
   }
 
+
+
   render() {
     const { currentUser, showAdminBoard } = this.state;
 
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
+        <nav className="navbar navbar-expand navbar-dark bg-primary">
+          <Link to={"/"} className="navbar-brand" >
             Simply Shopping
           </Link>
           <div className="navbar-nav mr-auto">
@@ -56,7 +58,7 @@ class App extends Component {
 
             {showAdminBoard && (
               <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
+                <Link to={"/admin"} className="nav-link" >
                   Seller
                 </Link>
               </li>
@@ -64,7 +66,7 @@ class App extends Component {
 
             {currentUser && (
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
+                <Link to={"/user"} className="nav-link" >
                   Buyer
                 </Link>
               </li>
@@ -101,16 +103,20 @@ class App extends Component {
           )}
         </nav>
 
-        <div className="container mt-3">
-          <Switch>
-            <Route exact path={["/", "/home"]} component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/profile" component={Profile} />
-            <Route path="/user" component={BoardUser} />
-            <Route path="/admin" component={BoardAdmin} />
-          </Switch>
+
+        <div className="main">
+          <div className="container mt-3">
+            <Switch>
+              <Route exact path={["/", "/home"]} component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/profile" component={Profile} />
+              <Route path="/user" component={BoardUser} />
+              <Route path="/admin" component={BoardAdmin} />
+            </Switch>
+          </div>
         </div>
+
       </div>
     );
   }
