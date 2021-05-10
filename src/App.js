@@ -105,7 +105,7 @@ class App extends Component {
 
 
         <div className="main">
-          <div className="container mt-3">
+          <div className="container mt-3" style={{marginLeft:"30px"}}>
             <Switch>
               <Route exact path={["/", "/home"]} component={Home} />
               <Route exact path="/login" component={Login} />
