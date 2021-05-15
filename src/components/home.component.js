@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import UserService from "../services/user.service";
-import SideNavUserComponent from "./side-nav-user.component";
+import SideNavUserComponent from "./navigation/side-nav-user.component";
 
 export default class Home extends Component {
   constructor(props) {
@@ -32,14 +32,14 @@ export default class Home extends Component {
 
   render() {
     return (
-        <>
-          <SideNavUserComponent/>
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-        </header>
-      </div>
-          </>
+      <>
+        <SideNavUserComponent />
+        <div className="container">
+          <header className="jumbotron">
+            <h3>{this.state.content}</h3>
+          </header>
+        </div>
+      </>
     );
   }
 }

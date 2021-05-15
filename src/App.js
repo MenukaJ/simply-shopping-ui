@@ -11,6 +11,9 @@ import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardAdmin from "./components/board-admin.component";
+import Category from "./components/category.component";
+import Brand from "./components/brand.component";
+import Attribute from "./components/attribute.component";
 
 class App extends Component {
   constructor(props) {
@@ -113,6 +116,9 @@ class App extends Component {
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
               <Route path="/admin" component={BoardAdmin} />
+              <Route path="/category" component={Category} />
+              <Route path="/brand" component={Brand} />
+              <Route path="/attribute" component={Attribute} />
             </Switch>
           </div>
         </div>

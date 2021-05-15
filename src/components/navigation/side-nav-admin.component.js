@@ -10,6 +10,12 @@ export class SideNavAdminComponent extends Component {
         return (
             <div>
                 <div className="sidenav">
+                    <a href="/admin">Dashbord</a>
+                    <a href="/category">Category</a>
+                    <a href="/brand">Brand</a>
+                    <a href="/attribute">Attribute</a>
+                    <a href="/attribute-value">Attribute Value</a>
+
                     <button className="dropdown-btn">Dropdown
                         <i className="fa fa-caret-down"></i>
                     </button>
@@ -34,9 +40,6 @@ export class SideNavAdminComponent extends Component {
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#clients">Admin</a>
                 </div>
             </div>
         );
