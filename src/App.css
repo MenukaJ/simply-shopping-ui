@@ -2,7 +2,7 @@
   font-size: medium;
   }
   .table td {
-    padding: 2px 0px 0px 0px;
+    padding: 8px 0px 8px 0px;
     font-size: medium;
     text-align: center;
   }
@@ -41,27 +41,26 @@
   
   
   .sidenav {
-    height: auto;
+    height: 200%;
     width: 250px;
     margin-left: 8px;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    top: 10;
     left: 0;
-    background-color: #ffffff;
+    background-color: #003366;
     overflow-x: hidden;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     box-shadow: 1px 2px 2px 2px rgba(0.3, 0.3, 0.3, 0.3);
     border-radius: 5px;
   }
   
   /* Style the sidenav links and the dropdown button */
   .sidenav a, .dropdown-btn {
-    padding: 6px 8px 6px 16px;
+    padding: 6px 8px 10px 16px;
     text-decoration: none;
     font-size: large;
-    color: black;
+    color: #F5F5F5;
     display: block;
     border: none;
     background: none;
@@ -73,16 +72,14 @@
   
   /* On mouse-over */
   .sidenav a:hover {
-    color: blue;
+    color: #F5F5F5;
     font-weight: bold;
-    background-color: #F5F5F5;
-  
-  
+    background-color: #004080;
   }
   .dropdown-btn:hover {
-    color: white;
+    color: #F5F5F5;
     font-weight: bold;
-    background-color: black;
+    background-color: #004080;
   }
   
   /* Main content */

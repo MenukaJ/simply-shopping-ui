@@ -14,6 +14,7 @@ import BoardAdmin from "./components/board-admin.component";
 import Category from "./components/category.component";
 import Brand from "./components/brand.component";
 import Attribute from "./components/attribute.component";
+import Item from "./components/item.component";
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class App extends Component {
 
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-primary">
+        <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand" >
             Simply Shopping
           </Link>
@@ -62,7 +63,7 @@ class App extends Component {
             {showAdminBoard && (
               <li className="nav-item">
                 <Link to={"/admin"} className="nav-link" >
-                  Seller
+                  <i className="fa fa-user-secret"></i>&nbsp; Seller
                 </Link>
               </li>
             )}
@@ -70,7 +71,7 @@ class App extends Component {
             {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link" >
-                  Buyer
+                  <i className="fa fa-user-circle-o"></i>&nbsp; Buyer
                 </Link>
               </li>
             )}
@@ -80,7 +81,7 @@ class App extends Component {
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
+                  <i className="fa fa-user"></i>&nbsp; {currentUser.username}
                 </Link>
               </li>
               <li className="nav-item">
@@ -119,6 +120,7 @@ class App extends Component {
               <Route path="/category" component={Category} />
               <Route path="/brand" component={Brand} />
               <Route path="/attribute" component={Attribute} />
+              <Route path="/item" component={Item} />
             </Switch>
           </div>
         </div>

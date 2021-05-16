@@ -9,30 +9,18 @@ export class SideNavAdminComponent extends Component {
     render() {
         return (
             <div>
-                <div className="sidenav">
-                    <a href="/admin">Dashbord</a>
-                    <a href="/category">Category</a>
-                    <a href="/brand">Brand</a>
-                    <a href="/attribute">Attribute</a>
-                    <a href="/attribute-value">Attribute Value</a>
+                <div className="sidenav" >
+                    <a href="/admin" ><i className="fa fa-dashboard"></i>&nbsp; Dashboard</a>
+                    <a href="/category"><i className="fa fa-th-list"></i>&nbsp; Categories</a>
+                    <a href="/brand"><i className="fa fa-gift"></i>&nbsp; Brands</a>
+                    <a href="/attribute"><i className="fa fa-list-alt"></i>&nbsp; Attributes</a>
+                    <a href="/attribute-value"><i className="fa fa-list-ol"></i>&nbsp; Attribute Values</a>
+                    <a href="/item"><i className="fa fa-shopping-cart"></i>&nbsp; Items</a>
+                    <a href="/item"><i className="fa fa-cc-visa"></i>&nbsp; Orders</a>
+                    <a href="/item"><i className="fa fa-user-secret"></i>&nbsp; Sellers</a>
+                    <a href="/item"><i className="fa fa-users"></i>&nbsp; Buyers</a>
 
-                    <button className="dropdown-btn">Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <button className="dropdown-btn">Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <button className="dropdown-btn">Dropdown
+                    <button className="dropdown-btn"><i className="fa fa-dashboard"></i>&nbsp; Dropdown
                         <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-container">
