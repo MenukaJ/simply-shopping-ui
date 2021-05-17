@@ -19,15 +19,6 @@ export class SideNavAdminComponent extends Component {
                     <a href="/item"><i className="fa fa-cc-visa"></i>&nbsp; Orders</a>
                     <a href="/item"><i className="fa fa-user-secret"></i>&nbsp; Sellers</a>
                     <a href="/item"><i className="fa fa-users"></i>&nbsp; Buyers</a>
-
-                    <button className="dropdown-btn"><i className="fa fa-dashboard"></i>&nbsp; Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
                 </div>
             </div>
         );

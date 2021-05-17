@@ -5,14 +5,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/board-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board-admin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/register.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +66,7 @@
       <workItem from="1621139725549" duration="6594000" />
       <workItem from="1621150564570" duration="6902000" />
       <workItem from="1621165721968" duration="12784000" />
+      <workItem from="1621249969825" duration="15824000" />
     </task>
     <servers />
   </component>

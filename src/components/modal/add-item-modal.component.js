@@ -3,6 +3,7 @@ import { Modal, Button, Row, Col, Form} from 'react-bootstrap';
 import ItemService from '../../services/item.service';
 import CategoryService from '../../services/category.service';
 import BrandService from '../../services/brand.service';
+import AttributeValueService from '../../services/attribute-value.service';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -13,7 +14,8 @@ export class AddItemModalComponent extends Component {
             snackbaropen: false,
             snackbarmsg: '',
             categories: [],
-            brands: []
+            brands: [],
+            attributeValues: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -23,7 +25,7 @@ export class AddItemModalComponent extends Component {
     }
 
     refreshList() {
-        CategoryService.getAllCategory().then(
+        CategoryService.getCategoryByStatus('ACTIVE').then(
             response => {
                 this.setState({
                     categories: response.data
@@ -40,7 +42,7 @@ export class AddItemModalComponent extends Component {
                 });
             }
         );
-        BrandService.getAllBrand().then(
+        BrandService.getBrandByStatus('ACTIVE').then(
             response => {
                 this.setState({
                     brands: response.data
@@ -49,6 +51,23 @@ export class AddItemModalComponent extends Component {
             error => {
                 this.setState({
                     brands:
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString()
+                });
+            }
+        );
+        AttributeValueService.getAttributeValueByStatus('ACTIVE').then(
+            response => {
+                this.setState({
+                    attributeValues: response.data
+                });
+            },
+            error => {
+                this.setState({
+                    attributeValues:
                         (error.response &&
                             error.response.data &&
                             error.response.data.message) ||
@@ -106,6 +125,7 @@ export class AddItemModalComponent extends Component {
     render() {
         const {categories} = this.state;
         const {brands} = this.state;
+        const {attributeValues} = this.state;
         return (
             <div className="container">
                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -161,19 +181,35 @@ export class AddItemModalComponent extends Component {
                                     </Form.Group>
                                     <Form.Group controlId="attributeValueId1">
                                         <Form.Label>Attribute Value 1</Form.Label>
-                                        <Form.Control type="text" name="attributeValueId1" placeholder="Attribute Value 1" />
+                                        <Form.Control as="select" required name="attributeValueId1">
+                                            {attributeValues.map((attributeValue1) => (
+                                                <option value={attributeValue1.id}>{attributeValue1.name}</option>
+                                            ))}
+                                        </Form.Control>
                                     </Form.Group>
                                     <Form.Group controlId="attributeValueId2">
                                         <Form.Label>Attribute Value 2</Form.Label>
-                                        <Form.Control type="text" name="attributeValueId2" placeholder="Attribute Value 2" />
+                                        <Form.Control as="select" required name="attributeValueId2">
+                                            {attributeValues.map((attributeValue2) => (
+                                                <option value={attributeValue2.id}>{attributeValue2.name}</option>
+                                            ))}
+                                        </Form.Control>
                                     </Form.Group>
                                     <Form.Group controlId="attributeValueId3">
                                         <Form.Label>Attribute Value 3</Form.Label>
-                                        <Form.Control type="text" name="attributeValueId3" placeholder="Attribute Value 3" />
+                                        <Form.Control as="select" required name="attributeValueId3">
+                                            {attributeValues.map((attributeValue3) => (
+                                                <option value={attributeValue3.id}>{attributeValue3.name}</option>
+                                            ))}
+                                        </Form.Control>
                                     </Form.Group>
                                     <Form.Group controlId="attributeValueId4">
                                         <Form.Label>Attribute Value 4</Form.Label>
-                                        <Form.Control type="text" name="attributeValueId4" placeholder="Attribute Value 4" />
+                                        <Form.Control as="select" required name="attributeValueId4">
+                                            {attributeValues.map((attributeValue4) => (
+                                                <option value={attributeValue4.id}>{attributeValue4.name}</option>
+                                            ))}
+                                        </Form.Control>
                                     </Form.Group>
                                     <Form.Group controlId="image1">
                                         <Form.Label>Image 1</Form.Label>

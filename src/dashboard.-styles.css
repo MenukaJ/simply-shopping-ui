@@ -1,0 +1,78 @@
+.card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 120px;
+    border-radius: 5px;
+    transition: .3s linear all;
+}
+
+.card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+}
+
+.card-counter.items{
+    background-color: #007bff;
+    color: #FFF;
+}
+
+.card-counter.categories{
+    background-color: #00802b;
+    color: #FFF;
+}
+
+.card-counter.brands{
+    background-color: #e6b800;
+    color: #FFF;
+}
+
+.card-counter.sellers{
+    background-color: #000000;
+    color: #FFF;
+}
+
+.card-counter.buyers{
+    background-color: #884dff;
+    color: #FFF;
+}
+
+.card-counter.orders{
+    background-color: #ff9933;
+    color: #FFF;
+}
+
+.card-counter.deliveries{
+    background-color: #000080;
+    color: #FFF;
+}
+
+.card-counter.complains{
+    background-color: #e60000;
+    color: #FFF;
+}
+
+.card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+}
+
+.card-counter .count-numbers{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block;
+}
+
+.card-counter .count-name{
+    position: absolute;
+    right: 35px;
+    top: 65px;
+    font-style: normal;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 18px;
+}
