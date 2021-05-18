@@ -57,7 +57,7 @@ export class AddCategoryModalComponent extends Component {
                     aria-labelledby="contained-modal-title-vcenter"
                 //centered
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton style={{background: '#0275d8', color: 'white'}}>
                         <Modal.Title id="contained-modal-title-vcenter">
                             Save Category
                         </Modal.Title>

@@ -45,7 +45,7 @@ export class DeleteAttributeModalComponent extends Component {
                           ]}
                 />
                 <Modal {...this.props}>
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton style={{background: '#d9534f', color: 'white'}}>
                         <Modal.Title>Are you sure delete?</Modal.Title>
                     </Modal.Header>
 

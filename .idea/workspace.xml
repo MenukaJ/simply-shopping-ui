@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board-admin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/attribute.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/attribute.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/brand.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/brand.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/category.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/category.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/add-attribute-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-attribute-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/add-brand-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-brand-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/delete-attribute-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/delete-attribute-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/delete-brand-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/delete-brand-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/delete-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/delete-category-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-attribute-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-attribute-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-brand-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-brand-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/modal" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,8 +55,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components" />
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\modal" />
+      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\navigation" />
@@ -67,6 +76,7 @@
       <workItem from="1621150564570" duration="6902000" />
       <workItem from="1621165721968" duration="12784000" />
       <workItem from="1621249969825" duration="15824000" />
+      <workItem from="1621354181168" duration="11383000" />
     </task>
     <servers />
   </component>

@@ -57,7 +57,7 @@ export class EditCategoryModalComponent extends Component {
                     aria-labelledby="contained-modal-title-vcenter"
 
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton style={{background: '#5bc0de', color: 'white'}}>
                         <Modal.Title id="contained-modal-title-vcenter">
                             Update
                         </Modal.Title>
