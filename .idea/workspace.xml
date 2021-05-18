@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board-admin.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board-user.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board-user.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/register.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +50,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621074231246</updated>
-      <workItem from="1621074233034" duration="3691000" />
+      <workItem from="1621074233034" duration="4660000" />
+      <workItem from="1621103481956" duration="1372000" />
     </task>
     <servers />
   </component>
@@ -71,5 +68,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
