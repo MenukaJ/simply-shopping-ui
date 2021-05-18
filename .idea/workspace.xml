@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/attribute.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/attribute.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/brand.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/brand.component.js" afterDir="false" />
@@ -17,6 +18,8 @@
       <change beforePath="$PROJECT_DIR$/src/components/modal/edit-attribute-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-attribute-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/edit-brand-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-brand-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" afterDir="false" />
+=======
+>>>>>>> menuka
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +74,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621074231246</updated>
+<<<<<<< HEAD
       <workItem from="1621074233034" duration="3691000" />
       <workItem from="1621139725549" duration="6594000" />
       <workItem from="1621150564570" duration="6902000" />
       <workItem from="1621165721968" duration="12784000" />
       <workItem from="1621249969825" duration="15824000" />
       <workItem from="1621354181168" duration="11383000" />
+=======
+      <workItem from="1621074233034" duration="4660000" />
+      <workItem from="1621103481956" duration="1372000" />
+      <workItem from="1621353489461" duration="314000" />
+>>>>>>> menuka
     </task>
     <servers />
   </component>
