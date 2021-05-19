@@ -6,7 +6,7 @@ import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import AddItemModel from './modal/add-item-modal.component';
 import EditCategoryModel from './modal/edit-category-modal.component';
-import DeleteCategoryModel from './modal/delete-category-modal.component';
+import DeleteItemModel from './modal/delete-item-modal.component';
 import SideNavAdminComponent from "./navigation/side-nav-admin.component";
 
 export class ItemComponent extends Component {
@@ -190,7 +190,7 @@ export class ItemComponent extends Component {
                                 id={this.state.id}
                                 name={this.state.name}
                                 status={this.state.status} />
-                            <DeleteCategoryModel
+                            <DeleteItemModel
                                 show={this.state.deleteModalShow}
                                 onHide={DeleteModelClose}
                                 id={this.state.id} />
