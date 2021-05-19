@@ -263,7 +263,7 @@ export class AddItemModalComponent extends Component {
                     aria-labelledby="contained-modal-title-vcenter"
                     //centered
                 >
-                    <Modal.Header closeButton style={{background: '#000d1a', color: 'white'}}>
+                    <Modal.Header closeButton style={{background: '#0275d8', color: 'white'}}>
                         <Modal.Title id="contained-modal-title-vcenter">Add New Item</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>

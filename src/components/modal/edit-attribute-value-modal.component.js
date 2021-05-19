@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Modal, Button, Row, Col, Form, FormGroup, Alert } from 'react-bootstrap';
-import AttributeService from '../../services/attribute.service';
+import AttributeValueService from '../../services/attribute-value.service';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
+import AttributeService from '../../services/attribute.service';
 
-export class AddAttributeModalComponent extends Component {
+export class EditAttributeValueModalComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { snackbaropen: false, snackbarmsg: '' };
+        this.state = { snackbaropen: false, snackbarmsg: '' , attributes: []};
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -15,11 +16,39 @@ export class AddAttributeModalComponent extends Component {
         this.setState({ snackbaropen: false });
     };
 
-    handleSubmit(event) {
+    componentDidMount() {
+        this.refreshList();
+    }
+
+    refreshList() {
+        AttributeService.getAttributesByStatus("ACTIVE").then(
+            response => {
+                this.setState({
+                    attributes: response.data
+                });
+            },
+            error => {
+                this.setState({
+                    attributes:
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString()
+                });
+            }
+        );
+    }
+
+    componentDidUpdate() {
+        //this.refreshList();
+    }
+
+    handleSubmit(event, props) {
 
         event.preventDefault();
         //alert(event.target.name.value);
-        AttributeService.addAttributes(event.target.name.value, event.target.status.value).then(
+        AttributeValueService.updateAttributeValue(this.props.id, event.target.name.value, event.target.status.value, event.target.attributesId.value).then(
             response => {
                 if (response.message !== undefined) {
                     this.setState({ snackbaropen: true, snackbarmsg: response.message })
@@ -39,7 +68,7 @@ export class AddAttributeModalComponent extends Component {
     }
 
     render() {
-
+        const {attributes} = this.state;
         return (
             <div className="container">
                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -55,11 +84,11 @@ export class AddAttributeModalComponent extends Component {
                     {...this.props}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
-                //centered
+
                 >
-                    <Modal.Header closeButton style={{background: '#0275d8', color: 'white'}}>
+                    <Modal.Header closeButton style={{background: '#5bc0de', color: 'white'}}>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Save Attribute
+                            Update
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -67,20 +96,34 @@ export class AddAttributeModalComponent extends Component {
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlId="id">
+                                        <Form.Label>ID</Form.Label>
+                                        <Form.Control type="text" name="id" required disabled defaultValue={this.props.id} />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Attribute</Form.Label>
+                                        <Form.Control as="select" required name="attributesId">
+                                            <option selected disabled value={this.props.attributeId}>{this.props.attributeName}</option>
+                                            {attributes.length > 0 ? attributes.map(attribute =>
+                                                <option value={attribute.id}>{attribute.name}</option>
+                                            ) : <option></option>}
+                                        </Form.Control>
+                                    </Form.Group>
                                     <Form.Group controlId="name">
                                         <Form.Label>Name</Form.Label>
-                                        <Form.Control type="text" name="name" required placeholder="Attribute Name" />
+                                        <Form.Control type="text" name="name" required placeholder="Attribute Name" defaultValue={this.props.name} />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Status</Form.Label>
-                                        <Form.Control as="select" required name="status">
-                                            <option selected>ACTIVE</option>
+                                        <Form.Control as="select" required name="status" defaultValue={this.props.status}>
+                                            <option selected disabled>{this.props.status}</option>
+                                            <option>ACTIVE</option>
                                             <option>INACTIVE</option>
                                         </Form.Control>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit" >
-                                            Save
+                                            Update
                                         </Button>
                                     </Form.Group>
                                 </Form>
@@ -96,4 +139,4 @@ export class AddAttributeModalComponent extends Component {
         );
     }
 }
-export default AddAttributeModalComponent
+export default EditAttributeValueModalComponent

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Modal, Button, Row, Col, Form, FormGroup,Alert } from 'react-bootstrap';
-import AttributeService from '../../services/attribute.service';
+import AttributeValueService from '../../services/attribute-value.service';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 
-export class DeleteAttributeModalComponent extends Component {
+export class DeleteAttributeValueModalComponent extends Component {
     constructor(props) {
         super(props);
         this.state = { snackbaropen: false, snackbarmsg: '' };
@@ -19,7 +19,7 @@ export class DeleteAttributeModalComponent extends Component {
         this.props.onHide();
         event.preventDefault();
         //alert(event.target.name.value);
-        AttributeService.deleteAttributesById(this.props.id).then(
+        AttributeValueService.deleteAttributeValueById(this.props.id).then(
             response => {
                     this.setState({ snackbaropen: true, snackbarmsg: response.message })
             },
@@ -62,4 +62,4 @@ export class DeleteAttributeModalComponent extends Component {
         );
     }
 }
-export default DeleteAttributeModalComponent
+export default DeleteAttributeValueModalComponent

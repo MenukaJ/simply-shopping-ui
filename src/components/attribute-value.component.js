@@ -1,15 +1,15 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import BootstrapTable from 'react-bootstrap-table-next';
-import BrandService from '../services/brand.service';
-import {Table, Button, ButtonToolbar} from 'react-bootstrap';
-import filterFactory, {textFilter} from 'react-bootstrap-table2-filter';
+import AttributeValueService from '../services/attribute-value.service';
+import { Table, Button, ButtonToolbar } from 'react-bootstrap';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import AddBrandModel from './modal/add-brand-modal.component';
-import EditBrandModel from './modal/edit-brand-modal.component';
-import DeleteBrandModel from './modal/delete-brand-modal.component';
+import AddAttributeValueModel from './modal/add-attribute-value-modal.component';
+import EditAttributeValueModel from './modal/edit-attribute-value-modal.component';
+import DeleteAttributeValueModel from './modal/delete-attribute-value-modal.component';
 import SideNavAdminComponent from "./navigation/side-nav-admin.component";
 
-export class BrandComponent extends Component {
+export class AttributeValueComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,26 +19,35 @@ export class BrandComponent extends Component {
                 sort: true,
                 //style: { padding: '0px', fontSize: '15px', margin: '0px'},
                 headerStyle: (colum, colIndex) => {
-                    return {padding: '5px', textAlign: 'center'};
+                    return { padding: '5px', textAlign: 'center' };
                 }
             },
 
-                {
-                    dataField: 'name',
-                    text: 'Name',
-                    //style: { padding: '0px', fontSize: '15px', margin: '0px'},
-                    filter: textFilter(),
-                    headerStyle: (colum, colIndex) => {
-                        return {padding: '5px', textAlign: 'center'};
-                    }
+            {
+                dataField: 'name',
+                text: 'Name',
+                //style: { padding: '0px', fontSize: '15px', margin: '0px'},
+                filter: textFilter(),
+                headerStyle: (colum, colIndex) => {
+                    return { padding: '5px', textAlign: 'center' };
+                }
 
-                }, {
-                    dataField: 'status',
-                    text: 'Status',
+            }, {
+                dataField: 'status',
+                text: 'Status',
+                sort: true,
+                //style: { padding: '2px', fontSize: '15px', textAlign: 'center', margin: '0px'},
+                headerStyle: (colum, colIndex) => {
+                    return { padding: '5px', textAlign: 'center' };
+                }
+            },{
+                    dataField: 'attributeName',
+                    text: 'Attribute Name',
+                    filter: textFilter(),
                     sort: true,
                     //style: { padding: '2px', fontSize: '15px', textAlign: 'center', margin: '0px'},
                     headerStyle: (colum, colIndex) => {
-                        return {padding: '5px', textAlign: 'center'};
+                        return { padding: '5px', textAlign: 'center' };
                     }
                 },
                 {
@@ -60,7 +69,6 @@ export class BrandComponent extends Component {
                     headerStyle: (column, colIndex) => {
                         return {padding: '5px', textAlign: 'center'};
                     }
-
                 }
             ], addModalShow: false,
             editModalShow: false,
@@ -68,6 +76,8 @@ export class BrandComponent extends Component {
             id: '',
             name: '',
             status: '',
+            attributeId: '',
+            attributeName: '',
             data: {}
         };
     }
@@ -81,7 +91,9 @@ export class BrandComponent extends Component {
                             editModalShow: true,
                             id: row.id,
                             name: row.name,
-                            status: row.status
+                            status: row.status,
+                            attributeId: row.attributeId,
+                            attributeName: row.attributeName
                         })
                     }
                     }>Edit
@@ -106,7 +118,7 @@ export class BrandComponent extends Component {
     }
 
     refreshList() {
-        BrandService.getAllBrand().then(
+        AttributeValueService.getAllAttributeValue().then(
             response => {
                 this.setState({
                     attributes: response.data
@@ -124,7 +136,6 @@ export class BrandComponent extends Component {
             }
         );
     }
-
     componentDidUpdate() {
         //this.refreshList();
     }
@@ -149,40 +160,43 @@ export class BrandComponent extends Component {
             lastPage: 'Last',
             paginationPosition: 'top'
         };
-        let AddModelClose = () => this.setState({addModalShow: false})
-        let EditModelClose = () => this.setState({editModalShow: false})
-        let DeleteModelClose = () => this.setState({deleteModalShow: false})
+        let AddModelClose = () => this.setState({ addModalShow: false })
+        let EditModelClose = () => this.setState({ editModalShow: false })
+        let DeleteModelClose = () => this.setState({ deleteModalShow: false })
         return (
             <>
-                <SideNavAdminComponent/>
+                <SideNavAdminComponent />
                 <div className="container" style={{
                     marginLeft: '15px',
-                    paddingTop:'5px',
+                    paddingTop: '5px',
                     backgroundColor: '#ffffff',
                     boxShadow: '1px 2px 2px 2px rgba(0.3, 0.3, 0.3, 0.3)',
                     borderRadius: '5px'
                 }}>
-                    <header className="">
-                        <div className="container">
-                            <ButtonToolbar>
-                                <h4 style={{color:"gray"}}>Brand List</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <header className="" >
+                        <div className="container" >
+                            <ButtonToolbar >
+                                <h4 style={{color:"gray"}}>Attribute Value List</h4>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <Button variant='primary' size='sm'
-                                        onClick={() => this.setState({addModalShow: true})}
-                                >+ Add New Brand
+                                    onClick={() => this.setState({ addModalShow: true })}
+                                >+ Add New Attribute Value
                                 </Button>
 
                             </ButtonToolbar>
-                            <AddBrandModel
+                            <AddAttributeValueModel
                                 show={this.state.addModalShow}
                                 onHide={AddModelClose}
                             />
-                            <EditBrandModel
+                            <EditAttributeValueModel
                                 show={this.state.editModalShow}
                                 onHide={EditModelClose}
                                 id={this.state.id}
                                 name={this.state.name}
-                                status={this.state.status}/>
-                            <DeleteBrandModel
+                                status={this.state.status}
+                                attributeId={this.state.attributeId}
+                                attributeName={this.state.attributeName}
+                            />
+                            <DeleteAttributeValueModel
                                 show={this.state.deleteModalShow}
                                 onHide={DeleteModelClose}
                                 id={this.state.id}
@@ -201,7 +215,7 @@ export class BrandComponent extends Component {
                                     data={this.state.attributes}
                                     columns={this.state.columns}
                                     filter={filterFactory()}
-                                    pagination={paginationFactory(options)}/>
+                                    pagination={paginationFactory(options)} />
                             </div>
                         </div>
                     </header>
@@ -211,4 +225,4 @@ export class BrandComponent extends Component {
     }
 }
 
-export default BrandComponent
+export default AttributeValueComponent
