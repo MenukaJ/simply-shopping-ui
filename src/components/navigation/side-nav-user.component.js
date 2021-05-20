@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Route} from "react-router-dom";
+import AboutUs from "../about-us.component";
+import ContactUs from "../contact-us.component";
+import OurServices from "../our-services.component";
+import PrivacyPolicy from "../privacy-policy.component";
+import Faqs from "../faqs.component";
 
 export class SideNavUserComponent extends Component {
     constructor(props) {
@@ -14,33 +20,12 @@ export class SideNavUserComponent extends Component {
         return (
             <div>
                 <div className="sidenav" >
-                    <button className="dropdown-btn">Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <button className="dropdown-btn">Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <button className="dropdown-btn">Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-container">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#clients">Clients</a>
+                    <a href="/"><i className="fa fa-gift"></i>&nbsp; Our Store</a>
+                    <a href="/about-us"><i className="fa fa-home"></i>&nbsp; About Us</a>
+                    <a href="/contact-us"><i className="fa fa fa-phone"></i>&nbsp; Contact Us</a>
+                    <a href="/our-services"><i className="fa fa-handshake-o"></i>&nbsp; Our Services</a>
+                    <a href="/privacy-policy"><i className="fa fa-book"></i>&nbsp; Privacy Policy</a>
+                    <a href="/faqs"><i className="fa fa-question-circle"></i>&nbsp; FAQs</a>
                 </div>
             </div>
         );

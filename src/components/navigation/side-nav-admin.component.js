@@ -17,6 +17,7 @@ export class SideNavAdminComponent extends Component {
                     <a href="/attribute-value"><i className="fa fa-list-ol"></i>&nbsp; Attribute Values</a>
                     <a href="/item"><i className="fa fa-shopping-cart"></i>&nbsp; Items</a>
                     <a href="/item"><i className="fa fa-cc-visa"></i>&nbsp; Orders</a>
+                    <a href="/item"><i className="fa fa-commenting-o"></i>&nbsp; Feedbacks</a>
                     <a href="/item"><i className="fa fa-user-secret"></i>&nbsp; Sellers</a>
                     <a href="/item"><i className="fa fa-users"></i>&nbsp; Buyers</a>
                 </div>

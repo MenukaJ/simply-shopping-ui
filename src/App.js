@@ -5,7 +5,6 @@ import "./App.css";
 import "./dashboard.-styles.css";
 
 import AuthService from "./services/auth.service";
-
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
@@ -17,6 +16,12 @@ import Brand from "./components/brand.component";
 import Attribute from "./components/attribute.component";
 import Item from "./components/item.component";
 import AttributeValue from "./components/attribute-value.component";
+
+import AboutUs from "./components/about-us.component";
+import ContactUs from "./components/contact-us.component";
+import OurServices from "./components/our-services.component";
+import PrivacyPolicy from "./components/privacy-policy.component";
+import Faqs from "./components/faqs.component";
 
 class App extends Component {
   constructor(props) {
@@ -124,6 +129,12 @@ class App extends Component {
               <Route path="/attribute" component={Attribute} />
               <Route path="/item" component={Item} />
               <Route path="/attribute-value" component={AttributeValue} />
+              <Route path="/about-us" component={AboutUs} />
+              <Route path="/contact-us" component={ContactUs} />
+              <Route path="/our-services" component={OurServices} />
+              <Route path="/privacy-policy" component={PrivacyPolicy} />
+              <Route path="/faqs" component={Faqs} />
+
             </Switch>
           </div>
         </div>

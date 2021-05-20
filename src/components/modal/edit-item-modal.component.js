@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Modal, Button, Row, Col, Form} from 'react-bootstrap';
+import { Modal, Button, Row, Col, Form, FormGroup, Alert } from 'react-bootstrap';
 import ItemService from '../../services/item.service';
 import CategoryService from '../../services/category.service';
 import BrandService from '../../services/brand.service';
 import AttributeValueService from '../../services/attribute-value.service';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
-import { storage } from '../../firebase';
+import AttributeService from '../../services/attribute.service';
+import {storage} from "../../firebase";
 
-export class AddItemModalComponent extends Component {
+export class EditItemModalComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,6 +38,10 @@ export class AddItemModalComponent extends Component {
         this.handleImage4Change = this.handleImage4Change.bind(this);
         this.handleImageUpload = this.handleImageUpload.bind(this);
     }
+
+    snackbarClose = (event) => {
+        this.setState({ snackbaropen: false });
+    };
 
     componentDidMount() {
         this.refreshList();
@@ -95,19 +100,16 @@ export class AddItemModalComponent extends Component {
             }
         );
     }
+
     componentDidUpdate() {
         //this.refreshList();
     }
 
-    snackbarClose = (event) => {
-        this.setState({ snackbaropen: false });
-    };
-
-    handleSubmit(event) {
-
+    handleSubmit(event, props) {
         event.preventDefault();
         //alert(event.target.name.value);
-        ItemService.addItem(event.target.categorysId.value,
+        ItemService.updateItem(this.props.id,
+            event.target.categorysId.value,
             event.target.brandsId.value,
             event.target.name.value,
             event.target.description.value,
@@ -135,7 +137,6 @@ export class AddItemModalComponent extends Component {
             error => {
                 console.log(error);
                 this.setState({ snackbaropen: true, snackbarmsg: "failed" })
-
             }
         );
     }
@@ -261,10 +262,12 @@ export class AddItemModalComponent extends Component {
                     {...this.props}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
-                    //centered
+
                 >
-                    <Modal.Header closeButton style={{background: '#0275d8', color: 'white'}}>
-                        <Modal.Title id="contained-modal-title-vcenter">Add New Item</Modal.Title>
+                    <Modal.Header closeButton style={{background: '#5bc0de', color: 'white'}}>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            Update
+                        </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Row>
@@ -272,9 +275,21 @@ export class AddItemModalComponent extends Component {
                                 <Form onSubmit={this.handleSubmit}>
                                     <div className="row">
                                         <div className="col">
+                                            <Form.Group controlId="id">
+                                                <Form.Label>ID</Form.Label>
+                                                <Form.Control type="text" name="id" required disabled defaultValue={this.props.id} />
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col">
+
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col">
                                             <Form.Group controlId="categorysId">
                                                 <Form.Label>Category</Form.Label>
                                                 <Form.Control as="select" required name="categorysId">
+                                                    <option selected disabled value={this.props.categorysId}>{this.props.categorysName}</option>
                                                     {categories.length > 0 ? categories.map(category =>
                                                         <option value={category.id}>{category.name}</option>
                                                     ) : <option></option>}
@@ -285,6 +300,7 @@ export class AddItemModalComponent extends Component {
                                             <Form.Group controlId="brandsId">
                                                 <Form.Label>Brand</Form.Label>
                                                 <Form.Control as="select" required name="brandsId">
+                                                    <option selected disabled value={this.props.brandsId}>{this.props.brandsName}</option>
                                                     {brands.length > 0 ? brands.map(brand =>
                                                         <option value={brand.id}>{brand.name}</option>
                                                     ) : <option></option>}
@@ -296,13 +312,13 @@ export class AddItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="name">
                                                 <Form.Label>Name</Form.Label>
-                                                <Form.Control type="text" name="name" required placeholder="Name" />
+                                                <Form.Control type="text" name="name" required placeholder="Name" defaultValue={this.props.name} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
                                             <Form.Group controlId="description">
                                                 <Form.Label>Description</Form.Label>
-                                                <Form.Control type="text" name="description" placeholder="Description" />
+                                                <Form.Control type="text" name="description" placeholder="Description" defaultValue={this.props.description} />
                                             </Form.Group>
                                         </div>
                                     </div>
@@ -310,14 +326,15 @@ export class AddItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="quantity">
                                                 <Form.Label>Quantity</Form.Label>
-                                                <Form.Control type="text" name="quantity" placeholder="Quantity" />
+                                                <Form.Control type="text" name="quantity" placeholder="Quantity" defaultValue={this.props.quantity} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
                                             <Form.Group>
                                                 <Form.Label>Status</Form.Label>
-                                                <Form.Control as="select" required name="status">
-                                                    <option selected>ACTIVE</option>
+                                                <Form.Control as="select" required name="status" defaultValue={this.props.status}>
+                                                    <option selected disabled>{this.props.status}</option>
+                                                    <option>ACTIVE</option>
                                                     <option>INACTIVE</option>
                                                 </Form.Control>
                                             </Form.Group>
@@ -328,6 +345,7 @@ export class AddItemModalComponent extends Component {
                                             <Form.Group controlId="attributeValueId1">
                                                 <Form.Label>Attribute Value 1</Form.Label>
                                                 <Form.Control as="select" required name="attributeValueId1">
+                                                    <option selected disabled value={this.props.attributeValueId1}>{this.props.attributeValueId1Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue1 =>
                                                         <option value={attributeValue1.id}>{attributeValue1.name}</option>
                                                     ) : <option></option>}
@@ -338,6 +356,7 @@ export class AddItemModalComponent extends Component {
                                             <Form.Group controlId="attributeValueId2">
                                                 <Form.Label>Attribute Value 2</Form.Label>
                                                 <Form.Control as="select" required name="attributeValueId2">
+                                                    <option selected disabled value={this.props.attributeValueId2}>{this.props.attributeValueId2Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue2 =>
                                                         <option value={attributeValue2.id}>{attributeValue2.name}</option>
                                                     ) : <option></option>}
@@ -350,6 +369,7 @@ export class AddItemModalComponent extends Component {
                                             <Form.Group controlId="attributeValueId3">
                                                 <Form.Label>Attribute Value 3</Form.Label>
                                                 <Form.Control as="select" required name="attributeValueId3">
+                                                    <option selected disabled value={this.props.attributeValueId3}>{this.props.attributeValueId3Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue3 =>
                                                         <option value={attributeValue3.id}>{attributeValue3.name}</option>
                                                     ) : <option></option>}
@@ -360,6 +380,7 @@ export class AddItemModalComponent extends Component {
                                             <Form.Group controlId="attributeValueId4">
                                                 <Form.Label>Attribute Value 4</Form.Label>
                                                 <Form.Control as="select" required name="attributeValueId4">
+                                                    <option selected disabled value={this.props.attributeValueId4}>{this.props.attributeValueId4Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue4 =>
                                                         <option value={attributeValue4.id}>{attributeValue4.name}</option>
                                                     ) : <option></option>}
@@ -371,13 +392,13 @@ export class AddItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="price">
                                                 <Form.Label>Price</Form.Label>
-                                                <Form.Control type="text" name="price" required placeholder="Price" />
+                                                <Form.Control type="text" name="description" placeholder="Price" defaultValue={this.props.price} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
                                             <Form.Group controlId="discount">
                                                 <Form.Label>Discount</Form.Label>
-                                                <Form.Control type="text" name="discount" required placeholder="Discount" />
+                                                <Form.Control type="text" name="description" required placeholder="Discount" defaultValue={this.props.discount} />
                                             </Form.Group>
                                         </div>
                                     </div>
@@ -492,4 +513,4 @@ export class AddItemModalComponent extends Component {
         );
     }
 }
-export default AddItemModalComponent
+export default EditItemModalComponent

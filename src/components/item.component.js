@@ -5,7 +5,7 @@ import { Table, Button, ButtonToolbar } from 'react-bootstrap';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import AddItemModel from './modal/add-item-modal.component';
-import EditCategoryModel from './modal/edit-category-modal.component';
+import EditItemModel from './modal/edit-item-modal.component';
 import DeleteItemModel from './modal/delete-item-modal.component';
 import SideNavAdminComponent from "./navigation/side-nav-admin.component";
 
@@ -67,7 +67,27 @@ export class ItemComponent extends Component {
             editModalShow: false,
             deleteModalShow: false,
             id: '',
+            categorysId: '',
+            categorysName: '',
+            brandsId: '',
+            brandsName: '',
             name: '',
+            description: '',
+            quantity: '',
+            attributeValueId1: '',
+            attributeValueId1Name: '',
+            attributeValueId2: '',
+            attributeValueId2Name: '',
+            attributeValueId3: '',
+            attributeValueId3Name: '',
+            attributeValueId4: '',
+            attributeValueId4Name: '',
+            image1: '',
+            image2: '',
+            image3: '',
+            image4: '',
+            price: '',
+            discount: '',
             status: '',
             data: {}
             // isFollow: true
@@ -82,7 +102,27 @@ export class ItemComponent extends Component {
                             this.setState({
                                 editModalShow: true,
                                 id: row.id,
+                                categorysId: row.categorysId,
+                                categorysName: row.categorysName,
+                                brandsId: row.brandsId,
+                                brandsName: row.brandsName,
                                 name: row.name,
+                                description: row.description,
+                                quantity: row.quantity,
+                                attributeValueId1: row.attributeValueId1,
+                                attributeValueId1Name: row.attributeValueId1Name,
+                                attributeValueId2: row.attributeValueId2,
+                                attributeValueId2Name: row.attributeValueId2Name,
+                                attributeValueId3: row.attributeValueId3,
+                                attributeValueId3Name: row.attributeValueId3Name,
+                                attributeValueId4: row.attributeValueId4,
+                                attributeValueId4Name: row.attributeValueId4Name,
+                                image1: row.image1,
+                                image2: row.image2,
+                                image3: row.image3,
+                                image4: row.image4,
+                                price: row.price,
+                                discount: row.discount,
                                 status: row.status
                             })
                         }
@@ -184,11 +224,31 @@ export class ItemComponent extends Component {
                             <AddItemModel
                                 show={this.state.addModalShow}
                                 onHide={AddModelClose} />
-                            <EditCategoryModel
+                            <EditItemModel
                                 show={this.state.editModalShow}
                                 onHide={EditModelClose}
                                 id={this.state.id}
+                                categorysId={this.state.categorysId}
+                                categorysName={this.state.categorysName}
+                                brandsId={this.state.brandsId}
+                                brandsName={this.state.brandsName}
                                 name={this.state.name}
+                                description={this.state.description}
+                                quantity={this.state.quantity}
+                                attributeValueId1={this.state.attributeValueId1}
+                                attributeValueId1Name={this.state.attributeValueId1Name}
+                                attributeValueId2={this.state.attributeValueId2}
+                                attributeValueId2Name={this.state.attributeValueId2Name}
+                                attributeValueId3={this.state.attributeValueId3}
+                                attributeValueId3Name={this.state.attributeValueId3Name}
+                                attributeValueId4={this.state.attributeValueId4}
+                                attributeValueId4Name={this.state.attributeValueId4Name}
+                                image1={this.state.image1}
+                                image2={this.state.image2}
+                                image3={this.state.image3}
+                                image4={this.state.image4}
+                                price={this.state.price}
+                                discount={this.state.discount}
                                 status={this.state.status} />
                             <DeleteItemModel
                                 show={this.state.deleteModalShow}
