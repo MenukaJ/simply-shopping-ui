@@ -19,7 +19,7 @@ export class EditCategoryModalComponent extends Component {
 
         event.preventDefault();
         //alert(event.target.name.value);
-        CategoryService.updateCategory(this.props.id, event.target.name.value, event.target.status.value).then(
+        CategoryService.updateCategory(this.props.id, event.target.name.value, event.target.status.value, event.target.image.value).then(
             response => {
                 if (response.message !== undefined) {
                     this.setState({ snackbaropen: true, snackbarmsg: response.message })
@@ -71,10 +71,13 @@ export class EditCategoryModalComponent extends Component {
                                         <Form.Label>ID</Form.Label>
                                         <Form.Control type="text" name="id" required disabled defaultValue={this.props.id} />
                                     </Form.Group>
-
                                     <Form.Group controlId="name">
                                         <Form.Label>Name</Form.Label>
                                         <Form.Control type="text" name="name" required placeholder="Category Name" defaultValue={this.props.name} />
+                                    </Form.Group>
+                                    <Form.Group controlId="image">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control type="text" name="image" required placeholder="Catrgory image url" defaultValue={this.props.image}/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Status</Form.Label>

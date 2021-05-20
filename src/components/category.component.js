@@ -67,6 +67,7 @@ export class CategoryComponent extends Component {
             id: '',
             name: '',
             status: '',
+            image: '',
             data: {}
             // isFollow: true
         };
@@ -87,7 +88,8 @@ updatePageLink = (cell, row, rowIndex, formatExtraData) => {
                         editModalShow: true,
                         id: row.id,
                         name: row.name,
-                        status: row.status
+                        status: row.status,
+                        image: row.image
                     })
                 }
                 }>Edit
@@ -198,6 +200,7 @@ deletePageLink = (cell, row, rowIndex, formatExtraData) => {
                                 onHide={EditModelClose}
                                 id={this.state.id}
                                 name={this.state.name}
+                                image={this.state.image}
                                 status={this.state.status}/>
                             <DeleteCategoryModel
                                 show={this.state.deleteModalShow}

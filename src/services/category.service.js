@@ -20,10 +20,11 @@ class CategoryService {
         return axios.get(API_URL + 'status/' + status);
     }
 
-    addCategory(name, status) {
+    addCategory(name, status, image) {
         return axios
             .post(API_URL + "add", {
                 name,
+                image,
                 status
             }, {headers: authHeader()})
             .then(response => {
@@ -31,10 +32,11 @@ class CategoryService {
             });
     }
 
-    updateCategory(id, name, status) {
+    updateCategory(id, name, status, image) {
         return axios
             .put(API_URL + "update/" + id, {
                 name,
+                image,
                 status
             }, {headers: authHeader()})
             .then(response => {

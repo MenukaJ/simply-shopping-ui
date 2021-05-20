@@ -19,7 +19,7 @@ export class AddCategoryModalComponent extends Component {
 
         event.preventDefault();
         //alert(event.target.name.value);
-        CategoryService.addCategory(event.target.name.value, event.target.status.value).then(
+        CategoryService.addCategory(event.target.name.value, event.target.status.value, event.target.image.value).then(
             response => {
                 if (response.message !== undefined) {
                     this.setState({ snackbaropen: true, snackbarmsg: response.message })
@@ -70,6 +70,10 @@ export class AddCategoryModalComponent extends Component {
                                     <Form.Group controlId="name">
                                         <Form.Label>Name</Form.Label>
                                         <Form.Control type="text" name="name" required placeholder="Catrgory Name" />
+                                    </Form.Group>
+                                    <Form.Group controlId="image">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control type="text" name="image" required placeholder="Catrgory image url" />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Status</Form.Label>
