@@ -7,6 +7,13 @@
       <change beforePath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/category.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/category.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/modal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,8 +52,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\modal" />
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components" />
+      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\navigation" />
@@ -66,6 +73,7 @@
       <workItem from="1621150564570" duration="6902000" />
       <workItem from="1621165721968" duration="12784000" />
       <workItem from="1621249969825" duration="15824000" />
+<<<<<<< HEAD
       <workItem from="1621354181168" duration="11383000" />
       <workItem from="1621074233034" duration="4660000" />
       <workItem from="1621103481956" duration="1372000" />
@@ -73,6 +81,12 @@
       <workItem from="1621493596927" duration="89000" />
       <workItem from="1621524755151" duration="32000" />
       <workItem from="1621524800206" duration="684000" />
+=======
+      <workItem from="1621352102669" duration="17327000" />
+      <workItem from="1621417413385" duration="1246000" />
+      <workItem from="1621426086843" duration="1308000" />
+      <workItem from="1621482014956" duration="12514000" />
+>>>>>>> 3aa1585e8d4f91646b662d1f96a03f3254170545
     </task>
     <servers />
   </component>

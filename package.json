@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bootstrap": "4.6.0",
+    "firebase": "^8.6.1",
     "react": "^16.13.0",
     "react-bootstrap": "^1.6.0",
     "react-bootstrap-table-next": "^4.0.3",
