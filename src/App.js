@@ -17,6 +17,7 @@ import Brand from "./components/brand.component";
 import Attribute from "./components/attribute.component";
 import Item from "./components/item.component";
 import AttributeValue from "./components/attribute-value.component";
+import BuyerRegistration from "./components/buyer-registration.component";
 
 class App extends Component {
   constructor(props) {
@@ -124,6 +125,7 @@ class App extends Component {
               <Route path="/attribute" component={Attribute} />
               <Route path="/item" component={Item} />
               <Route path="/attribute-value" component={AttributeValue} />
+              <Route path="/registration" component={BuyerRegistration} />
             </Switch>
           </div>
         </div>
