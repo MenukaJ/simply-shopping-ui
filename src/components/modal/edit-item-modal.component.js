@@ -118,25 +118,29 @@ export class EditItemModalComponent extends Component {
             event.target.attributeValueId2.value,
             event.target.attributeValueId3.value,
             event.target.attributeValueId4.value,
-            event.target.image1.value,
-            event.target.image2.value,
-            event.target.image3.value,
-            event.target.image4.value,
+            this.state.url1,
+            this.state.url2,
+            this.state.url3,
+            this.state.url4,
             event.target.price.value,
             event.target.discount.value,
             event.target.status.value).then(
             response => {
                 if (response.message !== undefined) {
                     this.setState({snackbaropen: true, snackbarmsg: response.message})
-                } else if (response.status !== undefined) {
-                    this.setState({snackbaropen: true, snackbarmsg: response.status})
-                } else if (response.name !== undefined) {
-                    this.setState({snackbaropen: true, snackbarmsg: response.name})
                 }
             },
             error => {
                 console.log(error);
-                this.setState({ snackbaropen: true, snackbarmsg: "failed" })
+                if (error.response.data.message !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.message})
+                } else if (error.response.data.price !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.price})
+                } else if (error.response.data.discount !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.discount})
+                } else {
+                    this.setState({snackbaropen: true, snackbarmsg: "Failed to save!"})
+                }
             }
         );
     }
@@ -344,7 +348,7 @@ export class EditItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="attributeValueId1">
                                                 <Form.Label>Attribute Value 1</Form.Label>
-                                                <Form.Control as="select" required name="attributeValueId1">
+                                                <Form.Control as="select" name="attributeValueId1">
                                                     <option selected disabled value={this.props.attributeValueId1}>{this.props.attributeValueId1Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue1 =>
                                                         <option value={attributeValue1.id}>{attributeValue1.name}</option>
@@ -355,7 +359,7 @@ export class EditItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="attributeValueId2">
                                                 <Form.Label>Attribute Value 2</Form.Label>
-                                                <Form.Control as="select" required name="attributeValueId2">
+                                                <Form.Control as="select" name="attributeValueId2">
                                                     <option selected disabled value={this.props.attributeValueId2}>{this.props.attributeValueId2Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue2 =>
                                                         <option value={attributeValue2.id}>{attributeValue2.name}</option>
@@ -368,7 +372,7 @@ export class EditItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="attributeValueId3">
                                                 <Form.Label>Attribute Value 3</Form.Label>
-                                                <Form.Control as="select" required name="attributeValueId3">
+                                                <Form.Control as="select" name="attributeValueId3">
                                                     <option selected disabled value={this.props.attributeValueId3}>{this.props.attributeValueId3Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue3 =>
                                                         <option value={attributeValue3.id}>{attributeValue3.name}</option>
@@ -379,7 +383,7 @@ export class EditItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="attributeValueId4">
                                                 <Form.Label>Attribute Value 4</Form.Label>
-                                                <Form.Control as="select" required name="attributeValueId4">
+                                                <Form.Control as="select" name="attributeValueId4">
                                                     <option selected disabled value={this.props.attributeValueId4}>{this.props.attributeValueId4Name}</option>
                                                     {attributeValues.length > 0 ? attributeValues.map(attributeValue4 =>
                                                         <option value={attributeValue4.id}>{attributeValue4.name}</option>
@@ -392,34 +396,34 @@ export class EditItemModalComponent extends Component {
                                         <div className="col">
                                             <Form.Group controlId="price">
                                                 <Form.Label>Price</Form.Label>
-                                                <Form.Control type="text" name="description" placeholder="Price" defaultValue={this.props.price} />
+                                                <Form.Control type="number" name="price" placeholder="Price" defaultValue={this.props.price} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
                                             <Form.Group controlId="discount">
                                                 <Form.Label>Discount</Form.Label>
-                                                <Form.Control type="text" name="description" required placeholder="Discount" defaultValue={this.props.discount} />
+                                                <Form.Control type="text" name="discount" placeholder="Discount" defaultValue={this.props.discount} />
                                             </Form.Group>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <Form.Label>Image 1</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage1Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <img src={this.state.url1 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress1} max="100" />
                                             </Form.Group>
@@ -427,22 +431,22 @@ export class EditItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <Form.Label>Image 2</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage2Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <img src={this.state.url2 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress2} max="100" />
                                             </Form.Group>
@@ -450,22 +454,22 @@ export class EditItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <Form.Label>Image 3</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage3Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <img src={this.state.url3 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress3} max="100" />
                                             </Form.Group>
@@ -473,22 +477,22 @@ export class EditItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <Form.Label>Image 4</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage4Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <img src={this.state.url4 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress4} max="100" />
                                             </Form.Group>

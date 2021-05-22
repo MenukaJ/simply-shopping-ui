@@ -22,6 +22,8 @@ import ContactUs from "./components/contact-us.component";
 import OurServices from "./components/our-services.component";
 import PrivacyPolicy from "./components/privacy-policy.component";
 import Faqs from "./components/faqs.component";
+import ItemFront from "./components/item-front.component";
+import ItemFrontView from "./components/item-front-view.component";
 
 class App extends Component {
   constructor(props) {
@@ -134,6 +136,8 @@ class App extends Component {
               <Route path="/our-services" component={OurServices} />
               <Route path="/privacy-policy" component={PrivacyPolicy} />
               <Route path="/faqs" component={Faqs} />
+              <Route path="/item-front/:id" component={ItemFront} />
+              <Route path="/item-front-view/:id" component={ItemFrontView} />
 
             </Switch>
           </div>

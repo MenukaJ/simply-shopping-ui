@@ -20,6 +20,10 @@ class CategoryService {
         return axios.get(API_URL + 'status/' + status);
     }
 
+    getAttributeValueByAttributeId(attributeId) {
+        return axios.get(API_URL + 'attribute-id/' + attributeId);
+    }
+
     addAttributeValue(name, status, attributesId) {
         return axios
             .post(API_URL + "add", {
