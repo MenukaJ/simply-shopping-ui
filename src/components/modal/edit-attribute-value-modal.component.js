@@ -53,16 +53,19 @@ export class EditAttributeValueModalComponent extends Component {
                 if (response.message !== undefined) {
                     this.setState({ snackbaropen: true, snackbarmsg: response.message })
                 }
-                else if (response.status !== undefined) {
-                    this.setState({ snackbaropen: true, snackbarmsg: response.status })
-                } else if (response.name !== undefined) {
-                    this.setState({ snackbaropen: true, snackbarmsg: response.name })
-                }
             },
             error => {
-                console.log(error);
-                this.setState({ snackbaropen: true, snackbarmsg: "failed" })
-
+                if (error.response.data.status !== undefined) {
+                    this.setState({ snackbaropen: true, snackbarmsg: error.response.data.status })
+                } else if (error.response.data.name !== undefined) {
+                    this.setState({ snackbaropen: true, snackbarmsg: error.response.data.name })
+                }else if (error.response.data.message !== undefined) {
+                    this.setState({ snackbaropen: true, snackbarmsg: error.response.data.message })
+                }else if (error.response.data.attributesId !== undefined) {
+                    this.setState({ snackbaropen: true, snackbarmsg: error.response.data.attributesId })
+                } else {
+                    this.setState({ snackbaropen: true, snackbarmsg: "failed to Save" })
+                }
             }
         );
     }
