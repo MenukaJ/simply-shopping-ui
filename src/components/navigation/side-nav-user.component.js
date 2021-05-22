@@ -26,6 +26,7 @@ export class SideNavUserComponent extends Component {
                     <a href="/our-services"><i className="fa fa-handshake-o"></i>&nbsp; Our Services</a>
                     <a href="/privacy-policy"><i className="fa fa-book"></i>&nbsp; Privacy Policy</a>
                     <a href="/faqs"><i className="fa fa-question-circle"></i>&nbsp; FAQs</a>
+                    <a href="/item-front"><i className="fa fa-question-circle"></i>&nbsp; Item Front</a>
                 </div>
             </div>
         );

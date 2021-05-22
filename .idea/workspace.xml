@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="">
+    <list default="true" id="f3751737-a35a-4414-917f-2e242de43068" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/item-front-view.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/category.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/category.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-category-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-category-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/category.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/category.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item-front.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-front.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-admin.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/attribute-value.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/attribute-value.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/item.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/item.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sZJZ7QBUEIXYCykS2NIcM6JSyW" />
   <component name="ProjectViewState">
@@ -73,20 +79,13 @@
       <workItem from="1621150564570" duration="6902000" />
       <workItem from="1621165721968" duration="12784000" />
       <workItem from="1621249969825" duration="15824000" />
-<<<<<<< HEAD
-      <workItem from="1621354181168" duration="11383000" />
-      <workItem from="1621074233034" duration="4660000" />
-      <workItem from="1621103481956" duration="1372000" />
-      <workItem from="1621353489461" duration="314000" />
-      <workItem from="1621493596927" duration="89000" />
-      <workItem from="1621524755151" duration="32000" />
-      <workItem from="1621524800206" duration="684000" />
-=======
       <workItem from="1621352102669" duration="17327000" />
       <workItem from="1621417413385" duration="1246000" />
       <workItem from="1621426086843" duration="1308000" />
-      <workItem from="1621482014956" duration="12514000" />
->>>>>>> 3aa1585e8d4f91646b662d1f96a03f3254170545
+      <workItem from="1621482014956" duration="12832000" />
+      <workItem from="1621518014389" duration="13636000" />
+      <workItem from="1621576276435" duration="18643000" />
+      <workItem from="1621653888979" duration="11647000" />
     </task>
     <servers />
   </component>

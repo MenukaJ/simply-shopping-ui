@@ -116,26 +116,29 @@ export class AddItemModalComponent extends Component {
             event.target.attributeValueId2.value,
             event.target.attributeValueId3.value,
             event.target.attributeValueId4.value,
-            event.target.image1.value,
-            event.target.image2.value,
-            event.target.image3.value,
-            event.target.image4.value,
+            this.state.url1,
+            this.state.url2,
+            this.state.url3,
+            this.state.url4,
             event.target.price.value,
             event.target.discount.value,
             event.target.status.value).then(
             response => {
                 if (response.message !== undefined) {
                     this.setState({snackbaropen: true, snackbarmsg: response.message})
-                } else if (response.status !== undefined) {
-                    this.setState({snackbaropen: true, snackbarmsg: response.status})
-                } else if (response.name !== undefined) {
-                    this.setState({snackbaropen: true, snackbarmsg: response.name})
                 }
             },
             error => {
                 console.log(error);
-                this.setState({ snackbaropen: true, snackbarmsg: "failed" })
-
+                if (error.response.data.message !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.message})
+                } else if (error.response.data.price !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.price})
+                } else if (error.response.data.discount !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.discount})
+                } else {
+                    this.setState({snackbaropen: true, snackbarmsg: "Failed to save!"})
+                }
             }
         );
     }
@@ -383,22 +386,22 @@ export class AddItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <Form.Label>Image 1</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage1Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image1">
+                                            <Form.Group controlId="url1">
                                                 <img src={this.state.url1 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress1} max="100" />
                                             </Form.Group>
@@ -406,22 +409,22 @@ export class AddItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <Form.Label>Image 2</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage2Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image2">
+                                            <Form.Group controlId="url2">
                                                 <img src={this.state.url2 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress2} max="100" />
                                             </Form.Group>
@@ -429,22 +432,22 @@ export class AddItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <Form.Label>Image 3</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage3Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image3">
+                                            <Form.Group controlId="url3">
                                                 <img src={this.state.url3 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress3} max="100" />
                                             </Form.Group>
@@ -452,22 +455,22 @@ export class AddItemModalComponent extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <Form.Label>Image 4</Form.Label>
                                             </Form.Group>
                                         </div>
                                         <div className="col-6">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <Form.Control type="file" className="btn btn-outline-light btn btn-light" onChange={this.handleImage4Change} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <input type="button" value="Upload" className="btn btn-success" onClick={this.handleImageUpload} />
                                             </Form.Group>
                                         </div>
                                         <div className="col">
-                                            <Form.Group controlId="image4">
+                                            <Form.Group controlId="url4">
                                                 <img src={this.state.url4 || 'https://img.icons8.com/plasticine/452/apple-camera.png'} alt="Uploaded images" height="100" width="160" /><br />
                                                 <progress className="progress-bar progress-bar-striped bg-danger" role="progressbar" value={this.state.progress4} max="100" />
                                             </Form.Group>
