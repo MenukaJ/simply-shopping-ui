@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserService from "../services/user.service";
-import SideNavUserComponent from "./navigation/side-nav-user.component";
+import SideNavUserComponent from "./navigation/side-nav-comn.component";
 
 export default class Home extends Component {
   constructor(props) {
