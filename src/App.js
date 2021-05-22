@@ -24,6 +24,8 @@ import PrivacyPolicy from "./components/privacy-policy.component";
 import Faqs from "./components/faqs.component";
 import ItemFront from "./components/item-front.component";
 import ItemFrontView from "./components/item-front-view.component";
+import ShoppingCart from "./components/shopping-cart.component";
+import Checkout from "./components/checkout.component";
 
 class App extends Component {
   constructor(props) {
@@ -138,6 +140,8 @@ class App extends Component {
               <Route path="/faqs" component={Faqs} />
               <Route path="/item-front/:id" component={ItemFront} />
               <Route path="/item-front-view/:id" component={ItemFrontView} />
+              <Route path="/shopping-cart/:id" component={ShoppingCart} />
+              <Route path="/checkout/:id" component={Checkout} />
 
             </Switch>
           </div>

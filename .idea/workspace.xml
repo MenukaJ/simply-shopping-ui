@@ -4,13 +4,8 @@
     <list default="true" id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item-front-view.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-front-view.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/item-front.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-front.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/attribute-value.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/attribute-value.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/item.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/item.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

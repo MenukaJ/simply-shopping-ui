@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UserService from "../services/user.service";
 import SideNavUserComponent from "./navigation/side-nav-user.component";
-import CategoryService from '../services/category.service';
 import ItemService from '../services/item.service';
 import Table from 'react-bootstrap/Table';
 import {InputGroup, FormControl, Button} from 'react-bootstrap';
@@ -12,7 +11,6 @@ export default class ItemFrontComponent extends Component {
         super(props);
         this.state = {
             content: "",
-            categories: [],
             items: [],
             currentPage : 1,
             recordsPerPage : 3,
@@ -39,23 +37,6 @@ export default class ItemFrontComponent extends Component {
     }
 
     refreshList() {
-        CategoryService.getCategoryByStatus('ACTIVE').then(
-            response => {
-                this.setState({
-                    categories: response.data
-                });
-            },
-            error => {
-                this.setState({
-                    categories:
-                        (error.response &&
-                            error.response.data &&
-                            error.response.data.message) ||
-                        error.message ||
-                        error.toString()
-                });
-            }
-        );
         ItemService.getItemsByCategory(this.props.match.params.id).then(
             response => {
                 this.setState({
@@ -114,7 +95,7 @@ export default class ItemFrontComponent extends Component {
     };
 
     render() {
-        const {categories, items, currentPage, recordsPerPage} = this.state;
+        const {items, currentPage, recordsPerPage} = this.state;
         const lastIndex = currentPage * recordsPerPage;
         const firstIndex = lastIndex - recordsPerPage;
         const currentRecords = items.slice(firstIndex, lastIndex);

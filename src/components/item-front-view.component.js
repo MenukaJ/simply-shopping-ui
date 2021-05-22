@@ -3,13 +3,14 @@ import UserService from "../services/user.service";
 import SideNavUserComponent from "./navigation/side-nav-user.component";
 import ItemService from "../services/item.service";
 import AttributeValueService from "../services/attribute-value.service";
+import { Link } from 'react-router-dom';
 
 export default class ItemFrontViewComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
             content: "",
-            items: {},
+            items: [],
             attribute1Id: '',
             attribute1Name: '',
             attribute2Id: '',
@@ -82,12 +83,13 @@ export default class ItemFrontViewComponent extends Component {
     }
 
     render() {
+        const {items} = this.state;
         return (
             <>
                 <SideNavUserComponent />
                 <div className="container">
                     <header className="jumbotron">
-                        <h3>{this.state.items.name}</h3><br/>
+                        <h3>{items.name}</h3><br/>
                         <div className="row">
                             <div className="col-md-6 mb-4 mb-md-0">
                                 <div id="mdb-lightbox-ui"/>
@@ -95,8 +97,8 @@ export default class ItemFrontViewComponent extends Component {
                                     <div className="row product-gallery mx-1">
                                         <div className="col-12 mb-0">
                                             <figure className="view overlay rounded z-depth-1 main-img">
-                                                <a href={this.state.items.url1} data-size="710x823">
-                                                    <img src={this.state.items.url1} className="img-fluid z-depth-1" onClick={this.imageClick} />
+                                                <a href={items.url1} data-size="710x823">
+                                                    <img src={items.url1} className="img-fluid z-depth-1" onClick={this.imageClick} />
                                                 </a>
                                             </figure>
                                         </div>
@@ -104,32 +106,32 @@ export default class ItemFrontViewComponent extends Component {
                                             <div className="row">
                                                 <div className="col-3">
                                                     <div className="view overlay rounded z-depth-1 gallery-item">
-                                                        <a href={this.state.items.url1} data-size="710x823">
-                                                            <img src={this.state.items.url1} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
+                                                        <a href={items.url1} data-size="710x823">
+                                                            <img src={items.url1} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
                                                         </a>
                                                         <div className="mask rgba-white-slight"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-3">
                                                     <div className="view overlay rounded z-depth-1 gallery-item">
-                                                        <a href={this.state.items.url2} data-size="710x823">
-                                                            <img src={this.state.items.url2} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
+                                                        <a href={items.url2} data-size="710x823">
+                                                            <img src={items.url2} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
                                                         </a>
                                                         <div className="mask rgba-white-slight"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-3">
                                                     <div className="view overlay rounded z-depth-1 gallery-item">
-                                                        <a href={this.state.items.url3} data-size="710x823">
-                                                            <img src={this.state.items.url3} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
+                                                        <a href={items.url3} data-size="710x823">
+                                                            <img src={items.url3} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
                                                         </a>
                                                         <div className="mask rgba-white-slight"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-3">
                                                     <div className="view overlay rounded z-depth-1 gallery-item">
-                                                        <a href={this.state.items.url4} data-size="710x823">
-                                                            <img src={this.state.items.url4} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
+                                                        <a href={items.url4} data-size="710x823">
+                                                            <img src={items.url4} className="img-fluid" style={{width: '100px', height : '100px'}} onClick={this.imageClick} />
                                                         </a>
                                                         <div className="mask rgba-white-slight"/>
                                                     </div>
@@ -140,39 +142,39 @@ export default class ItemFrontViewComponent extends Component {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <h5>{this.state.items.name}</h5>
-                                <p className="mb-2 text-muted text-uppercase small">{this.state.items.categorysName}</p>
-                                <p><span className="mr-1">Price : <strong>Rs.{this.state.items.price}</strong></span></p>
-                                <p><span className="mr-1">Discount : <strong>Rs.{this.state.items.discount}</strong></span></p>
-                                <p className="pt-1">{this.state.items.description}</p>
+                                <h5>{items.name}</h5>
+                                <p className="mb-2 text-muted text-uppercase small">{items.categorysName}</p>
+                                <p><span className="mr-1">Price : <strong>Rs.{items.price}</strong></span></p>
+                                <p><span className="mr-1">Discount : <strong>Rs.{items.discount}</strong></span></p>
+                                <p className="pt-1">{items.description}</p>
                                 <div className="table-responsive">
                                     <table className="table table-sm table-borderless mb-0">
                                         <tbody>
                                         <tr>
                                             <th className="pl-0 w-25" scope="row"><strong>Brand</strong></th>
-                                            <td>{this.state.items.brandsName}</td>
+                                            <td>{items.brandsName}</td>
                                         </tr>
                                         <tr>
-                                            <th className="pl-0 w-25" scope="row"><strong>{this.state.items.attribute1Name}</strong></th>
-                                            <td>{this.state.items.attributeValueId1Name}</td>
+                                            <th className="pl-0 w-25" scope="row"><strong>{items.attribute1Name}</strong></th>
+                                            <td>{items.attributeValueId1Name}</td>
                                         </tr>
                                         <tr>
-                                            <th className="pl-0 w-25" scope="row"><strong>{this.state.items.attribute2Name}</strong></th>
-                                            <td>{this.state.items.attributeValueId2Name}</td>
+                                            <th className="pl-0 w-25" scope="row"><strong>{items.attribute2Name}</strong></th>
+                                            <td>{items.attributeValueId2Name}</td>
                                         </tr>
                                         <tr>
-                                            <th className="pl-0 w-25" scope="row"><strong>{this.state.items.attribute3Name}</strong></th>
-                                            <td>{this.state.items.attributeValueId3Name}</td>
+                                            <th className="pl-0 w-25" scope="row"><strong>{items.attribute3Name}</strong></th>
+                                            <td>{items.attributeValueId3Name}</td>
                                         </tr>
                                         <tr>
-                                            <th className="pl-0 w-25" scope="row"><strong>{this.state.items.attribute4Name}</strong></th>
-                                            <td>{this.state.items.attributeValueId4Name}</td>
+                                            <th className="pl-0 w-25" scope="row"><strong>{items.attribute4Name}</strong></th>
+                                            <td>{items.attributeValueId4Name}</td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <hr/>
-                                <button type="button" className="btn btn-primary btn-md mr-1 mb-2">Add to cart &nbsp;<i className="fa fa-shopping-cart"></i></button>
+                                <Link className="btn btn-primary btn-md mr-1 mb-2" to={`/shopping-cart/${items.id}`}>Add to cart &nbsp; <i className="fa fa-shopping-cart"></i></Link>
                             </div>
                         </div>
                     </header>
