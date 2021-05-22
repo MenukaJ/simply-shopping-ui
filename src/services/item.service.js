@@ -20,6 +20,10 @@ class ItemService {
         return axios.get(API_URL + 'status/' + status);
     }
 
+    getItemsByCategory(categoryId) {
+        return axios.get(API_URL + 'category/' + categoryId);
+    }
+
     addItem(categorysId,
             brandsId,
             name,
@@ -29,10 +33,10 @@ class ItemService {
             attributeValueId2,
             attributeValueId3,
             attributeValueId4,
-            image1,
-            image2,
-            image3,
-            image4,
+            url1,
+            url2,
+            url3,
+            url4,
             price,
             discount,
             status) {
@@ -47,10 +51,10 @@ class ItemService {
                 attributeValueId2,
                 attributeValueId3,
                 attributeValueId4,
-                image1,
-                image2,
-                image3,
-                image4,
+                url1,
+                url2,
+                url3,
+                url4,
                 price,
                 discount,
                 status
@@ -70,10 +74,10 @@ class ItemService {
                attributeValueId2,
                attributeValueId3,
                attributeValueId4,
-               image1,
-               image2,
-               image3,
-               image4,
+               url1,
+               url2,
+               url3,
+               url4,
                price,
                discount,
                status) {
@@ -88,10 +92,10 @@ class ItemService {
                 attributeValueId2,
                 attributeValueId3,
                 attributeValueId4,
-                image1,
-                image2,
-                image3,
-                image4,
+                url1,
+                url2,
+                url3,
+                url4,
                 price,
                 discount,
                 status
