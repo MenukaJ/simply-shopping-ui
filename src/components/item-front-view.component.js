@@ -4,6 +4,8 @@ import SideNavUserComponent from "./navigation/side-nav-user.component";
 import ItemService from "../services/item.service";
 import AttributeValueService from "../services/attribute-value.service";
 import { Link } from 'react-router-dom';
+import OrderService from "../services/order.service";
+import BuyerService from "../services/buyer.service";
 
 export default class ItemFrontViewComponent extends Component {
     constructor(props) {
@@ -18,7 +20,12 @@ export default class ItemFrontViewComponent extends Component {
             attribute3Id: '',
             attribute3Name: '',
             attribute4Id: '',
-            attribute4Name: ''
+            attribute4Name: '',
+            buyers : [],
+            buyersId : '',
+            itemsId: '',
+            quantity: '',
+            amount: ''
         };
     }
 
@@ -76,6 +83,49 @@ export default class ItemFrontViewComponent extends Component {
                 });
             }
         );
+        BuyerService.getBuyerById(100).then(
+            response => {
+                this.setState({
+                    buyers: response.data
+                });
+            },
+            error => {
+                this.setState({
+                    buyers:
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString()
+                });
+            }
+        );
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        OrderService.addOrder(100,
+            50,
+            20,
+            1000).then(
+            response => {
+                if (response.message !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: response.message})
+                    this.props.history.push(`/shopping-cart`);
+                    window.location.reload();
+                }
+            },
+            error => {
+                console.log(error);
+                if (error.response.data.message !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.message})
+                } else if (error.response.data.price !== undefined) {
+                    this.setState({snackbaropen: true, snackbarmsg: error.response.data.buyersId})
+                } else {
+                    this.setState({snackbaropen: true, snackbarmsg: "Failed to add!"})
+                }
+            }
+        );
     }
 
     imageClick = () => {
@@ -84,6 +134,7 @@ export default class ItemFrontViewComponent extends Component {
 
     render() {
         const {items} = this.state;
+        const {buyers} = this.state;
         return (
             <>
                 <SideNavUserComponent />
@@ -172,7 +223,8 @@ export default class ItemFrontViewComponent extends Component {
                                         </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div><br/>
+                                <p><span className="mr-1">Quantity : <input className="quantity" min={0} name="quantity" id="quantity" defaultValue={1} type="number"/></span></p>
                                 <hr/>
                                 <Link className="btn btn-primary btn-md mr-1 mb-2" to={`/shopping-cart/${items.id}`}>Add to cart &nbsp; <i className="fa fa-shopping-cart"></i></Link>
                             </div>

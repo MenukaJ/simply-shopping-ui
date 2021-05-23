@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UserService from "../services/user.service";
 import SideNavUserComponent from "./navigation/side-nav-comn.component";
-//import SideNavUserComponent from "./navigation/side-nav-user.component";
 import CategoryService from '../services/category.service';
 import Table from 'react-bootstrap/Table';
 import {InputGroup, FormControl, Button} from 'react-bootstrap';
