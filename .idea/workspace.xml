@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3751737-a35a-4414-917f-2e242de43068" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/item-front-view.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item-front.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-front.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/add-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/edit-item-modal.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/side-nav-user.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/attribute-value.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/attribute-value.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/item.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/item.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,7 +62,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ad56653-6897-4ab4-9164-302b23c147b1" name="Default Changelist" comment="" />
+      <changelist id="f3751737-a35a-4414-917f-2e242de43068" name="Default Changelist" comment="" />
       <created>1621074231246</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -86,6 +79,8 @@
       <workItem from="1621518014389" duration="13636000" />
       <workItem from="1621576276435" duration="18643000" />
       <workItem from="1621653888979" duration="11647000" />
+      <workItem from="1621761907218" duration="3781000" />
+      <workItem from="1621766834438" duration="22719000" />
     </task>
     <servers />
   </component>

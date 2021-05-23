@@ -54,7 +54,7 @@ class App extends Component {
 
 
   render() {
-    const { currentUser, showAdminBoard } = this.state;
+    const { currentUser, showAdminBoard, profileUrl } = this.state;
 
     return (
       <div>
@@ -89,7 +89,7 @@ class App extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
+                <Link to={ "/profile" } className="nav-link">
                   <i className="fa fa-user"></i>&nbsp; {currentUser.username}
                 </Link>
               </li>
