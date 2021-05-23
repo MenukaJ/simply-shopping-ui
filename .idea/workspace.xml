@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f3751737-a35a-4414-917f-2e242de43068" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile.component.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/services/payment.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/payment.service.js" afterDir="false" />
+>>>>>>> dba951a79670c0f3e801c1183aa42256bdef0b59
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +42,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/modal" />
+>>>>>>> dba951a79670c0f3e801c1183aa42256bdef0b59
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,8 +59,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components" />
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\modal" />
+      <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Menuka\Desktop\simply-shopping-ui\src\components\navigation" />
@@ -79,8 +87,13 @@
       <workItem from="1621518014389" duration="13636000" />
       <workItem from="1621576276435" duration="18643000" />
       <workItem from="1621653888979" duration="11647000" />
+<<<<<<< HEAD
       <workItem from="1621761907218" duration="3781000" />
       <workItem from="1621766834438" duration="22719000" />
+=======
+      <workItem from="1621691319049" duration="9798000" />
+      <workItem from="1621791160160" duration="118000" />
+>>>>>>> dba951a79670c0f3e801c1183aa42256bdef0b59
     </task>
     <servers />
   </component>
