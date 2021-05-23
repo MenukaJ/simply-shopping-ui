@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
-import SellerService from "../services/seller.service";
+import BuyerService from "../services/buyer.service";
 import {Button, ButtonToolbar} from "react-bootstrap";
-import AddSellerModalComponent from "./modal/add-seller-modal.component";
-import EditSellerModalComponent from "./modal/edit-seller-modal.component";
+import AddBuyerModalComponent from "./modal/add-buyer-modal.component";
+import EditBuyerModalComponent from "./modal/edit-buyer-modal.component";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class Profile extends Component {
       redirect: null,
       userReady: false,
       currentUser: { username: "" },
-      currentSeller: [],
+      currentBuyer: [],
       addModalShow: true,
       editModalShow: false
     };
@@ -32,15 +32,15 @@ export default class Profile extends Component {
   }
 
   refreshList(currentUserId) {
-    SellerService.getSellerByUserId(currentUserId).then(
+    BuyerService.getBuyerByUserId(currentUserId).then(
         response => {
           this.setState({
-            currentSeller: response.data, addModalShow: false
+            currentBuyer: response.data, addModalShow: false
           });
         },
         error => {
           this.setState({
-            currentSeller:
+            currentBuyer:
                 (error.response &&
                     error.response.data &&
                     error.response.data.message) ||
@@ -57,7 +57,7 @@ export default class Profile extends Component {
     }
 
     const { currentUser, addModalShow } = this.state;
-    const { currentSeller } = this.state;
+    const { currentBuyer } = this.state;
 
     let EditModalClose = () => this.setState({editModalShow: false})
     let AddModalClose = () => this.setState({addModalShow: false})
@@ -69,7 +69,7 @@ export default class Profile extends Component {
               <div className="container">
                 {(this.state.userReady) ?
                     <div>
-                      <AddSellerModalComponent
+                      <AddBuyerModalComponent
                           show={this.state.addModalShow}
                           onHide={AddModalClose}
                           currentUser={currentUser}/>
@@ -93,11 +93,11 @@ export default class Profile extends Component {
                                       })
                                       }>Edit</Button>
                             </ButtonToolbar>
-                            <EditSellerModalComponent
+                            <EditBuyerModalComponent
                                 show={this.state.editModalShow}
                                 onHide={EditModalClose}
                                 currentUser={currentUser}
-                                currentSeller={currentSeller}/>
+                                currentBuyer={currentBuyer}/>
                           </div>
                         </div>
                       </header>
@@ -112,31 +112,31 @@ export default class Profile extends Component {
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline mb-0 mb-lg-4">
                                         <label htmlFor="firstName">First Name</label>
-                                        <p>{ currentSeller.firstName }</p>
+                                        <p>{ currentBuyer.firstName }</p>
                                       </div>
                                     </div>
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline">
                                         <label htmlFor="lastName">Last Name</label>
-                                        <p>{ currentSeller.lastName }</p>
+                                        <p>{ currentBuyer.lastName }</p>
                                       </div>
                                     </div>
                                   </div>
                                   <div className="md-form md-outline">
                                     <label htmlFor="form14">Full Name</label>
-                                    <p>{ currentSeller.fullName }</p>
+                                    <p>{ currentBuyer.fullName }</p>
                                   </div><br/>
                                   <div className="row">
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline">
                                         <label htmlFor="form14">Address</label>
-                                        <p>{ currentSeller.addressLine1 }, { currentSeller.addressLine2 }, { currentSeller.addressLine3 }</p>
+                                        <p>{ currentBuyer.addressLine1 }, { currentBuyer.addressLine2 }, { currentBuyer.addressLine3 }</p>
                                       </div><br/>
                                     </div>
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline">
                                         <label htmlFor="form14">Date of Birth</label>
-                                        <p>{ currentSeller.dob }</p>
+                                        <p>{ currentBuyer.dob }</p>
                                       </div><br/>
                                     </div>
                                   </div>
@@ -144,25 +144,25 @@ export default class Profile extends Component {
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline mb-0 mb-lg-4">
                                         <label htmlFor="form15">Email</label>
-                                        <p>{ currentSeller.email }</p>
+                                        <p>{ currentBuyer.email }</p>
                                       </div>
                                     </div>
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline">
                                         <label htmlFor="form18">Mobile</label>
-                                        <p>{ currentSeller.mobile }</p>
+                                        <p>{ currentBuyer.mobileNumber }</p>
                                       </div>
                                     </div>
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline">
                                         <label htmlFor="form18">Land Phone</label>
-                                        <p>{ currentSeller.landline }</p>
+                                        <p>{ currentBuyer.landLine }</p>
                                       </div>
                                     </div>
                                     <div className="col-lg-6">
                                       <div className="md-form md-outline mb-0 mb-lg-4">
                                         <label htmlFor="form16">NIC</label>
-                                        <p>{ currentSeller.nic }</p>
+                                        <p>{ currentBuyer.nic }</p>
                                       </div>
                                     </div>
                                   </div>
